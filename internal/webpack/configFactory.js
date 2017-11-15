@@ -38,7 +38,7 @@ export default function webpackConfigFactory(buildOptions) {
   const isServer = target === 'server';
   const isNode = !isClient;
 
-  // Preconfigure some ifElse helper instnaces. See the util docs for more
+  // Preconfigure some ifElse helper instances. See the util docs for more
   // information on how this util works.
   const ifDev = ifElse(isDev);
   const ifProd = ifElse(isProd);

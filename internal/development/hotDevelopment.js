@@ -15,7 +15,8 @@ const vendorDLLsFailed = (err) => {
   log({
     title: 'vendorDLL',
     level: 'error',
-    message: 'Unfortunately an error occured whilst trying to build the vendor dll(s) used by the development server. Please check the console for more information.',
+    message:
+      'Unfortunately an error occured whilst trying to build the vendor dll(s) used by the development server. Please check the console for more information.',
     notify: true,
   });
   if (err) {
@@ -97,9 +98,7 @@ class HotDevelopment {
       // Then start the node development server(s).
       .then((clientCompiler) => {
         this.hotNodeServers = nodeBundles.map(
-          ({ name, createCompiler }) =>
-            // $FlowFixMe
-            new HotNodeServer(name, createCompiler(), clientCompiler),
+          ({ name, createCompiler }) => new HotNodeServer(name, createCompiler(), clientCompiler),
         );
       });
   }

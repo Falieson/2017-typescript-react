@@ -199,6 +199,9 @@ const values = {
           'react-dom',
           'react-helmet',
           'react-router-dom',
+          'redux',
+          'react-redux',
+          'redux-thunk',
         ],
 
         // The name of the vendor DLL.

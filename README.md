@@ -23,6 +23,7 @@ Then, I went ahead added my architecture decisions and preferences. I'm trying t
 - [ ] 🐦 `kea` for minimal redux changes w/ @kea
 - [ ] 🔆 `redux-developer-tools` chrome extension
 - [ ] 🔆 `redux-developer-tools` built-in
+- [ ] 🔆 `redux-logger` redux state changes are output to the console
 - [ ] 🎶  `eslint` preferences, @falieson 's preferences based - on @kentcdodds .
 - [x] 🔨 restructured 'shared'=>'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
 

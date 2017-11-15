@@ -1,15 +1,16 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { renderToString, renderToStaticMarkup } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import { AsyncComponentProvider, createAsyncContext } from 'react-async-component';
+import { JobProvider, createJobContext } from 'react-jobs';
 import asyncBootstrapper from 'react-async-bootstrapper';
+import { Provider } from 'react-redux';
+import Helmet from 'react-helmet';
+import configureStore from '../../../src/redux/store';
 
 import config from '../../../config';
-
+import App from '../../../src/app/';
 import ServerHTML from './ServerHTML';
-import DemoApp from '../../../src/app/';
-import { log } from '../../../internal/utils';
 
 /**
  * React application middleware, supports server side rendering.
@@ -27,11 +28,7 @@ export default function reactApplicationMiddleware(request, response) {
   if (config('disableSSR')) {
     if (process.env.BUILD_FLAG_IS_DEV === 'true') {
       // eslint-disable-next-line no-console
-      log({
-        title: 'Server',
-        level: 'info',
-        message: `Handling react route without SSR: ${request.url}`,
-      });
+      console.log('==> Handling react route without SSR');
     }
     // SSR is disabled so we will return an "empty" html page and
     // rely on the client to initialize and render the react application.
@@ -47,12 +44,23 @@ export default function reactApplicationMiddleware(request, response) {
   // query for the results of the render.
   const reactRouterContext = {};
 
+  // Create the job context for our provider, this grants
+  // us the ability to track the resolved jobs to send back to the client.
+  const jobContext = createJobContext();
+
+  // Create the redux store.
+  const store = configureStore();
+
   // Declare our React application.
   const app = (
     <AsyncComponentProvider asyncContext={asyncComponentsContext}>
-      <StaticRouter location={request.url} context={reactRouterContext}>
-        <DemoApp />
-      </StaticRouter>
+      <JobProvider jobContext={jobContext}>
+        <StaticRouter location={request.url} context={reactRouterContext}>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </StaticRouter>
+      </JobProvider>
     </AsyncComponentProvider>
   );
 
@@ -67,6 +75,9 @@ export default function reactApplicationMiddleware(request, response) {
         reactAppString={appString}
         nonce={nonce}
         helmet={Helmet.rewind()}
+        storeState={store.getState()}
+        routerState={reactRouterContext}
+        jobsState={jobContext.getState()}
         asyncComponentsState={asyncComponentsContext.getState()}
       />,
     );
