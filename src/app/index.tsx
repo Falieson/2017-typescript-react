@@ -4,7 +4,7 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import { Route, Switch } from 'react-router-dom'
 
-import config from '../../../config'
+import config from '../../config'
 
 import './globals.css'
 

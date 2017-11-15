@@ -11,12 +11,12 @@ import PropTypes from 'prop-types';
 import serialize from 'serialize-javascript';
 
 import config from '../../../config';
-import ifElse from '../../../shared/utils/logic/ifElse';
-import removeNil from '../../../shared/utils/arrays/removeNil';
+import ifElse from '../../../src/utils/logic/ifElse';
+import removeNil from '../../../src/utils/arrays/removeNil';
 import getClientBundleEntryAssets from './getClientBundleEntryAssets';
 
 import ClientConfig from '../../../config/components/ClientConfig';
-import HTML from '../../../shared/components/HTML';
+import HTML from '../../../src/utils/renderHtml';
 
 // PRIVATES
 
@@ -43,8 +43,9 @@ function ServerHTML(props) {
   const { asyncComponentsState, helmet, nonce, reactAppString } = props;
 
   // Creates an inline script definition that is protected by the nonce.
-  const inlineScript = body =>
-    <script nonce={nonce} type="text/javascript" dangerouslySetInnerHTML={{ __html: body }} />;
+  const inlineScript = body => (
+    <script nonce={nonce} type="text/javascript" dangerouslySetInnerHTML={{ __html: body }} />
+  );
 
   const headerElements = removeNil([
     ...ifElse(helmet)(() => helmet.meta.toComponent(), []),
@@ -94,16 +95,10 @@ function ServerHTML(props) {
   return (
     <HTML
       htmlAttributes={ifElse(helmet)(() => helmet.htmlAttributes.toComponent(), null)}
-      headerElements={headerElements.map((x, idx) =>
-        (<KeyedComponent key={idx}>
-          {x}
-        </KeyedComponent>),
-      )}
-      bodyElements={bodyElements.map((x, idx) =>
-        (<KeyedComponent key={idx}>
-          {x}
-        </KeyedComponent>),
-      )}
+      headerElements={headerElements.map((x, idx) => (
+        <KeyedComponent key={idx}>{x}</KeyedComponent>
+      ))}
+      bodyElements={bodyElements.map((x, idx) => <KeyedComponent key={idx}>{x}</KeyedComponent>)}
       appBodyString={reactAppString}
     />
   );

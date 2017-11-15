@@ -11,11 +11,11 @@
     "clean": "cross-env babel-node internal/scripts/clean",
     "deploy": "babel-node internal/scripts/deploy",
     "dev": "cross-env DEPLOYMENT=development babel-node internal/development",
-    "es": "eslint shared",
-    "es:fix": "eslint --fix shared",
-    "es:all": "eslint --fix client server shared config internal",
-    "ts": "tslint -p ./tsconfig.json './shared/**/*.{ts,tsx}'",
-    "ts:fix": "tslint --fix -c ./tslint.json -p ./tsconfig.json './shared/**/*.{ts,tsx}'",
+    "es": "eslint src",
+    "es:fix": "eslint --fix src",
+    "es:all": "eslint --fix client src src config internal",
+    "ts": "tslint -p ./tsconfig.json './src/**/*.{ts,tsx}'",
+    "ts:fix": "tslint --fix -c ./tslint.json -p ./tsconfig.json './src/**/*.{ts,tsx}'",
     "precommit": "lint-staged",
     "preinstall": "node internal/scripts/preinstall",
     "prepush": "jest",
@@ -127,7 +127,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "shared/**/*.{js,jsx}"
+      "src/**/*.{js,jsx}"
     ],
     "snapshotSerializers": [
       "<rootDir>/node_modules/enzyme-to-json/serializer"
