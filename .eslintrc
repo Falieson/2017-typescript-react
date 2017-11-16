@@ -1,6 +1,5 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb",
   "env": {
     "browser": true,
     "es6": true,
@@ -14,14 +13,76 @@
       "defaultParams": true
     }
   },
+  "extends": [  // order matters
+    "kentcdodds",
+    "kentcdodds/react",
+    "kentcdodds/possible-errors",
+    "kentcdodds/best-practices",
+    "kentcdodds/es6/possible-errors",
+    "kentcdodds/import",
+    "kentcdodds/jest"
+  ],
+  /*
+    falieson's overrides of kentcdodds' config
+  */
   "rules": {
-    // A jsx extension is not required for files containing jsx
-    "react/jsx-filename-extension": 0,
-    // This rule struggles with flow and class properties
-    "react/sort-comp": 0,
-    // ignore linebreak style. the CRLF / LF endings wont matter
-    // if a windows user correctly converts CRLF to LF upon commits otherwise
-    // there are errors every line.
-    "linebreak-style": 0
+    // TODO: RESEARCH
+    "no-buffer-constructor"             : 0,
+    "for-direction"                     : 0,
+    "getter-return"                     : 0,
+
+    // ***** Style ***************************************************************
+    "brace-style"                       : [2, "1tbs", { "allowSingleLine": true }],
+    "comma-dangle"                      : [2, "never"],
+    "consistent-return"                 : 0,
+    "curly"                             : [2, "all"],
+    "func-names"                        : 0,
+    "indent"                            : [2, 2, { "SwitchCase": 1 }],
+    "key-spacing"                       : [2, { "align": "colon" }],
+    "keyword-spacing"                   : 0,
+    "linebreak-style"                   : 1,
+    "max-len"                           : [1, 120],
+    "no-case-declarations"              : 0,
+    "no-cond-assign"                    : 2,
+    "no-console"                        : [1, { "allow": ["warn", "error"] }],
+    "no-extra-semi"                     : "error",
+    "no-param-reassign"                 : 2,
+    "no-underscore-dangle"              : 0,
+    "no-unused-expressions"             : [2, { "allowShortCircuit": true }],
+    "no-unused-vars"                    : [2, { "args": "all", "varsIgnorePattern": "[mM]eteor" }],
+    "no-use-before-define"              : [2, { "functions": false, "classes": true }],
+    "padding-blocks"                    : 0,
+    "semi"                              : ["error", "never"],
+    "space-before-function-paren"       : ["error", "never"],
+    "quotes"                            : ["error", "single"],
+
+    // ***** import *************************************************************
+    "import/extensions"                 : [0, "always", { "js": "never", "jsx": "never" }],
+    "import/first"                      : 0,
+    "import/no-extraneous-dependencies" : 0,
+    "import/no-unresolved"              : 0,
+    "import/no-unassigned-import"       : 0,
+    "import/prefer-default-export"      : 1,
+
+    // ***** misc ***************************************************************
+    "complexity"                        : [0, 10],
+    "react/jsx-boolean-value"           : 0,
+    "valid-jsdoc"                       : 0
   }
 }
+
+
+// ORIGINAL - REACT-UNIVERSALLY
+// {
+//  ... <identical> ...
+//   "rules": {
+//     // A jsx extension is not required for files containing jsx
+//     "react/jsx-filename-extension": 0,
+//     // This rule struggles with flow and class properties
+//     "react/sort-comp": 0,
+//     // ignore linebreak style. the CRLF / LF endings wont matter
+//     // if a windows user correctly converts CRLF to LF upon commits otherwise
+//     // there are errors every line.
+//     "linebreak-style": 0
+//   }
+// }

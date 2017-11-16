@@ -1,6 +1,6 @@
-import React from 'react';
-import Logo from './Logo';
-import Menu from './Menu';
+import React from 'react'
+import Logo from './Logo'
+import Menu from './Menu'
 
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
       <strong>A starter kit for universal react applications.</strong>
       <Menu />
     </div>
-  );
+  )
 }
 
-export default Header;
+export default Header

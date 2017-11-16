@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'react-router-dom/Link';
+import React from 'react'
+import Link from 'react-router-dom/Link'
 
 function Menu() {
   return (
@@ -17,7 +17,7 @@ function Menu() {
         <Link to="/about">About</Link>
       </li>
     </ul>
-  );
+  )
 }
 
-export default Menu;
+export default Menu

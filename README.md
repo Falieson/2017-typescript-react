@@ -41,7 +41,7 @@ Then, I went ahead added my architecture decisions and preferences. I'm trying t
 - [x] 🎮  `nps` node-package-scripts removes the limitation of package.json enabling JS & //comments .  Modify `/package-scripts.js` and use `nps <command>` instead of `npm run <command>`.
 - [x] 🙌  `commitizen` to help us generate beautifully formatted and consistent commit messages.
 - [x] 😹  `cz-emoji` is a plugin for commitizen that adds emoji to the commit template.
-- [ ] 🎶  `eslint` preferences, @falieson 's preferences based on @kentcdodds .
+- [x] 🎶  `eslint` preferences, @falieson 's preferences based on @kentcdodds .
 
 ### from falieson/react-universally--typescript/features/redux-opinionated
 
