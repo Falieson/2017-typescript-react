@@ -1,7 +1,7 @@
 {
-  "name": "react-universally",
-  "version": "13.0.0",
-  "description": "A starter kit for universal react applications.",
+  "name": "2017-typescript-react",
+  "version": "0.1.0",
+  "description": "Falieson's 2017 Typescript & React starter kit",
   "main": "build/server/index.js",
   "scripts": {
     "analyze:client": "babel-node internal/scripts/analyze --client",
@@ -141,20 +141,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ctrlplusb/react-universally.git"
+    "url": "git+https://github.com/falieson/2017-typescript-react.git"
   },
   "keywords": [
     "react",
+    "redux",
+    "universal",
+    "express",
+    "webpack",
     "boilerplate",
     "starter kit",
-    "universal",
-    "javascript",
-    "express",
-    "webpack"
+    "typescript"
   ],
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ctrlplusb/react-universally/issues"
+    "url": "https://github.com/falieson/2017-typescript-react/issues"
   },
-  "homepage": "https://github.com/ctrlplusb/react-universally#readme"
+  "homepage": "https://github.com/falieson/2017-typescript-react#readme",
+  "license": "MIT"
 }

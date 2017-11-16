@@ -26,8 +26,7 @@ exports[`<AboutRoute /> renders 1`] = `
     >
       GitHub
     </a>
-     
-    page.
+     page.
   </p>
 </div>
 `;
