@@ -21,7 +21,8 @@ Then, I went ahead added my architecture decisions and preferences. I'm trying t
 
 ### falieson/2017-typescript-react (this one)
 
-- [ ] 🔨  restructured 'shared'=>'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
+- [x] 🔨  refactor 'shared'=>'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
+- [x] 🔨  refactor 'shared/actions' & 'shared/reducers' =>'shared/redux/..'
 - [ ] 🎶  `eslint` preferences, @falieson 's preferences based on @kentcdodds .
 - [ ] 🎮  `nps` use JS instead of being limited to JSON for npm run start.
 - [ ] 🙌  `commitizen` for uniform commit structure.

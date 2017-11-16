@@ -7,12 +7,12 @@ import asyncBootstrapper from 'react-async-bootstrapper';
 import { AsyncComponentProvider } from 'react-async-component';
 import { JobProvider } from 'react-jobs';
 import { Provider } from 'react-redux';
-import configureStore from '../shared/redux/configureStore';
+import configureStore from '../src/redux/configureStore';
 
 import './polyfills';
 
 import ReactHotLoader from './components/ReactHotLoader';
-import DemoApp from '../shared/components/DemoApp';
+import DemoApp from '../src/components/DemoApp';
 
 // Get the DOM Element that will host our React application.
 const container = document.querySelector('#app');
@@ -80,7 +80,7 @@ if (process.env.BUILD_FLAG_IS_DEV === 'true' && module.hot) {
   // Accept changes to this file for hot reloading.
   module.hot.accept('./index.js');
   // Any changes to our App will cause a hotload re-render.
-  module.hot.accept('../shared/components/DemoApp', () => {
-    renderApp(require('../shared/components/DemoApp').default);
+  module.hot.accept('../src/components/DemoApp', () => {
+    renderApp(require('../src/components/DemoApp').default);
   });
 }

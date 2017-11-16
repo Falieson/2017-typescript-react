@@ -11,7 +11,7 @@
 import config from '../config';
 
 if (process.env.BUILD_FLAG_IS_DEV === 'false') {
-  // We check the shared config, ensuring that the service worker has been
+  // We check the src config, ensuring that the service worker has been
   // enabled.
   if (config('serviceWorker.enabled')) {
     // eslint-disable-next-line global-require

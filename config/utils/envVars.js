@@ -12,8 +12,8 @@ import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 
-import ifElse from '../../shared/utils/logic/ifElse';
-import removeNil from '../../shared/utils/arrays/removeNil';
+import ifElse from '../../src/utils/logic/ifElse';
+import removeNil from '../../src/utils/arrays/removeNil';
 
 // PRIVATES
 

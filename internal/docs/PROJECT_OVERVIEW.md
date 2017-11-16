@@ -57,7 +57,7 @@ Below are some of the critical folders of the project along with a comment descr
 |
 |- server // The server bundle entry and specific source.
 |- client // The client bundle entry and specific source.
-|- shared // The shared code between the bundles.
+|- src    // The shared code between the bundles.
 |
 |- internal
 |  |- docs // Documentation

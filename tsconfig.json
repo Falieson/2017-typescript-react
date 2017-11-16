@@ -19,7 +19,7 @@
     "target": "es5"
   },
   "include": [
-    "shared/**/*.ts",
-    "shared/**/*.tsx"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ]
 }

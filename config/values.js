@@ -9,7 +9,7 @@ import * as EnvVars from './utils/envVars';
 
 const values = {
   // The configuration values that should be exposed to our client bundle.
-  // This value gets passed through the /shared/utils/objects/filterWithRules
+  // This value gets passed through the /src/utils/objects/filterWithRules
   // util to create a filter object that can be serialised and included
   // with our client bundle.
   clientConfigFilter: {
@@ -163,7 +163,7 @@ const values = {
       // Src paths.
       srcPaths: [
         './client',
-        './shared',
+        './src',
         // The service worker offline page generation needs access to the
         // config folder.  Don't worry we have guards within the config files
         // to ensure they never get included in a client bundle.
@@ -215,7 +215,7 @@ const values = {
       srcEntryFile: './server/index.js',
 
       // Src paths.
-      srcPaths: ['./server', './shared', './config'],
+      srcPaths: ['./server', './src', './config'],
 
       // Where does the server bundle output live?
       outputPath: './build/server',
@@ -239,7 +239,7 @@ const values = {
       srcEntryFile: './api/index.js',
       srcPaths: [
         './api',
-        './shared',
+        './src',
         './config',
       ],
       outputPath: './build/api',
