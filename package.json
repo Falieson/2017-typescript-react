@@ -4,9 +4,10 @@
   "description": "Falieson's 2017 Typescript & React starter kit",
   "main": "build/server/index.js",
   "scripts": {
+    "commit": "nps commit",
+    "commit:noverify": "nps commit.noverify",
     "start": "nps",
     "test": "nps test",
-    "precommit": "lint-staged && nps check.ts.fix",
     "preinstall": "node internal/scripts/preinstall",
     "prepush": "jest"
   },
@@ -65,6 +66,8 @@
     "babel-template": "6.25.0",
     "chokidar": "1.7.0",
     "css-loader": "0.28.4",
+    "commitizen": "2.9.6",
+    "cz-emoji": "0.2.0",
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
     "eslint": "3.19.0",
@@ -80,7 +83,6 @@
     "html-webpack-plugin": "2.29.0",
     "husky": "0.14.3",
     "jest": "20.0.4",
-    "lint-staged": "4.0.2",
     "md5": "2.2.1",
     "modernizr-loader": "1.0.1",
     "node-notifier": "5.1.2",
@@ -110,6 +112,72 @@
   },
   "engines": {
     "node": ">=8"
+  },
+  "config": {
+    "cz-emoji": {
+      "types": [
+        {
+          "name": "feat \t\t🌟  A new feature",
+          "value": ":star2:"
+        },
+        {
+          "name": "fix \t\t🐞  A bug fix",
+          "value": ":beetle:"
+        },
+        {
+          "name": "test \t\t🚓  Testing improved with new or fixed tests",
+          "value": ":police_car:"
+        },
+        {
+          "name": "chore \t🔩  Doesn't modify src or test files",
+          "value": ":nut_and_bolt:"
+        },
+        {
+          "name": "style \t✏️  Doesn't affect the meaning of the code (white-space, semi-colons, etc)",
+          "value": ":pencil2:"
+        },
+        {
+          "name": "docs \t\t📚  Documentation change",
+          "value": ":books:"
+        },
+        {
+          "name": "refactor \t🎨  Neither fixes a bug nor adds a feature",
+          "value": ":art:"
+        },
+        {
+          "name": "perf \t\t💰  Improves performance with this change",
+          "value": ":moneybag:"
+        },
+        {
+          "name": "build \t🚀  Build system config or external dependencies",
+          "value": ":rocket:"
+        },
+        {
+          "name": "ci \t\t🚥  CI config files and scripts",
+          "value": ":traffic_light:"
+        },
+        {
+          "name": "revert \t💊  Reverts a previous commit",
+          "value": ":pill:"
+        },
+        {
+          "name": "upgrade \t⤴️  Upgrades a repo package or a starter-kit from an upstream",
+          "value": ":arrow_heading_up:"
+        }        
+      ],
+      "scopes": [
+        "$config",
+        "$data",
+        "$dev",
+        "$pkg",
+        "$struct",
+        "$stack",
+        "$ui"
+      ]
+    },
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    }
   },
   "lint-staged": {
     "*.js": [

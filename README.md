@@ -4,6 +4,11 @@
   <p align='center'>A starter kit for universal react applications with typescript.</p>
 </p>
 
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![TypeScript](https://badges.frapsoft.com/typescript/version/typescript-v24.svg?v=101)](https://github.com/ellerbrock/typescript-badges/)
+[![nps friendly](https://img.shields.io/badge/nps-friendly-blue.svg?style=flat-square)](https://github.com/kentcdodds/nps)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 ## About
 
 This starter kit is based off `react-universally` which provides
@@ -17,15 +22,24 @@ Then, I went ahead added my architecture decisions and preferences. I'm trying t
 
 > NOTICE: Please read this important [issue](https://github.com/ctrlplusb/react-universally/issues/409) about the behaviour of this project when using `react-async-component`, which is by default bundled with it.
 
+## Commands - READ THIS
+
+```text
+* nps commit            : Creates a commit, don't use `git commit -m ...`
+* nps precommit         : Use series.nps('precommit.a', .'precommit.z')
+* nps                   : Starts the development server
+* nps launch.prod       : Starts the production server
+* nps build             : Starts the build process
+```
+
 ## Features - Separated by Repo
 
 ### falieson/2017-typescript-react (this one)
 
 - [x] 🔨  refactor 'shared'=>'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
 - [x] 🔨  refactor 'shared/actions' & 'shared/reducers' =>'shared/redux/...' .
-- [x] 🎮  `nps` is like `better-npm-run`, use `./package-scripts.js` and `nps <command>` instead of being limited to `npm run <command>`.
-
-- [ ] 🙌  `commitizen` for commit template for commit message concistency.
+- [x] 🎮  `nps` allows for JS & //comments instead of being limited to JSON.  Modify `/package-scripts.js` and use `nps <command>` instead of `npm run <command>`.
+- [ ] 🙌  `commitizen` to help us generate beautifully formatted and consistent commit messages.
 - [ ] 😹  `cz-emoji` is a plugin for commitizen that adds emoji to the commit template.
 - [ ] 🎶  `eslint` preferences, @falieson 's preferences based on @kentcdodds .
 
