@@ -12,7 +12,7 @@ import configureStore from '../src/redux/configureStore';
 import './polyfills';
 
 import ReactHotLoader from './components/ReactHotLoader';
-import DemoApp from '../src/components/DemoApp';
+import App from '../src/app';
 
 // Get the DOM Element that will host our React application.
 const container = document.querySelector('#app');
@@ -63,7 +63,7 @@ function renderApp(TheApp) {
 }
 
 // Execute the first render of our app.
-renderApp(DemoApp);
+renderApp(App);
 
 // This registers our service worker for asset caching and offline support.
 // Keep this as the last item, just in case the code execution failed (thanks
@@ -80,7 +80,7 @@ if (process.env.BUILD_FLAG_IS_DEV === 'true' && module.hot) {
   // Accept changes to this file for hot reloading.
   module.hot.accept('./index.js');
   // Any changes to our App will cause a hotload re-render.
-  module.hot.accept('../src/components/DemoApp', () => {
-    renderApp(require('../src/components/DemoApp').default);
+  module.hot.accept('../src/app', () => {
+    renderApp(require('../src/app').default);
   });
 }

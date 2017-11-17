@@ -9,7 +9,7 @@ import Helmet from 'react-helmet';
 import configureStore from '../../../src/redux/configureStore';
 
 import config from '../../../config';
-import DemoApp from '../../../src/components/DemoApp';
+import App from '../../../src/app/';
 import ServerHTML from './ServerHTML';
 
 /**
@@ -57,7 +57,7 @@ export default function reactApplicationMiddleware(request, response) {
       <JobProvider jobContext={jobContext}>
         <StaticRouter location={request.url} context={reactRouterContext}>
           <Provider store={store}>
-            <DemoApp />
+            <App />
           </Provider>
         </StaticRouter>
       </JobProvider>
