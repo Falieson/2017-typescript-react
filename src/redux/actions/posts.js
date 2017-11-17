@@ -1,16 +1,17 @@
 /* eslint-disable import/prefer-default-export */
 
 function fetching(id) {
-  return { type: 'FETCHING_POST', payload: id };
+  return { type: 'FETCHING_POST', payload: id }
 }
 
 function fetched(post) {
-  return { type: 'FETCHED_POST', payload: post };
+  return { type: 'FETCHED_POST', payload: post }
 }
 
 export function fetch(id) {
   return (dispatch, getState, { axios }) => {
-    dispatch(fetching(id));
+    // eslint-disable-line no-unused-vars
+    dispatch(fetching(id))
 
     return (
       axios
@@ -23,6 +24,6 @@ export function fetch(id) {
         // getting serialized by the server we will just return a simple "true"
         // here to indicate to react-jobs that all is well.
         .then(() => true)
-    );
-  };
+    )
+  }
 }

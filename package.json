@@ -71,7 +71,7 @@
     "enzyme": "2.9.1",
     "enzyme-to-json": "1.5.1",
     "eslint": "3.19.0",
-    "eslint-config-airbnb": "15.0.2",
+    "eslint-config-kentcdodds": "13.0.1",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-jsx-a11y": "5.1.1",
     "eslint-plugin-react": "7.1.0",
@@ -163,7 +163,7 @@
         {
           "name": "upgrade \t⤴️  Upgrades a repo package or a starter-kit from an upstream",
           "value": ":arrow_heading_up:"
-        }        
+        }
       ],
       "scopes": [
         "$config",

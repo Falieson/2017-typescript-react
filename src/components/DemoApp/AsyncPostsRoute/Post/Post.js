@@ -1,21 +1,21 @@
-import React from 'react';
-import PropTypes, { string } from 'prop-types';
-import { compose } from 'redux';
-import { connect } from 'react-redux';
-import { withJob } from 'react-jobs';
-import Helmet from 'react-helmet';
-import * as PostActions from '../../../../redux/actions/posts';
-import * as FromState from '../../../../redux/reducers';
+import React from 'react'
+import PropTypes, { string } from 'prop-types'
+import { compose } from 'redux'
+import { connect } from 'react-redux'
+import { withJob } from 'react-jobs'
+import Helmet from 'react-helmet'
+import * as PostActions from '../../../../redux/actions/posts'
+import * as FromState from '../../../../redux/reducers'
 
 export function Post({ post }) {
   if (!post) {
     // Post hasn't been fetched yet. It would be better if we had a "status"
     // reducer attached to our posts which gave us a bit more insight, such
     // as whether the post is currently being fetched, or if the fetch failed.
-    return null;
+    return null
   }
 
-  const { title, body } = post;
+  const { title, body } = post
 
   return (
     <div>
@@ -28,18 +28,18 @@ export function Post({ post }) {
         {body}
       </div>
     </div>
-  );
+  )
 }
 
 function mapStateToProps(state, { match }) {
   return {
-    post: FromState.getPostById(state, match.params.id),
-  };
+    post: FromState.getPostById(state, match.params.id)
+  }
 }
 
 const mapActionsToProps = {
-  fetchPost: PostActions.fetch,
-};
+  fetchPost: PostActions.fetch
+}
 
 // We use the "compose" function from redux (but the lodash/ramda/etc equivalent
 // would do the same), so that we can neatly attach multiple higher order
@@ -62,26 +62,25 @@ export default compose(
     work: ({ match, post, fetchPost }) => {
       if (post) {
         // We already have a post, just return true.
-        return true;
+        return true
       }
 
       // Execute the redux-thunk powered action that returns a Promise and
       // fetches the post.
-      return fetchPost(match.params.id);
+      return fetchPost(match.params.id)
     },
     // Any time the post id changes we need to trigger the work.
-    shouldWorkAgain: (prevProps, nextProps) =>
-      prevProps.match.params.id !== nextProps.match.params.id,
-  }),
-)(Post);
+    shouldWorkAgain: (prevProps, nextProps) => prevProps.match.params.id !== nextProps.match.params.id
+  })
+)(Post)
 
 Post.propTypes = {
   post: PropTypes.shape({
     title: string,
-    body: string,
-  }),
-};
+    body : string
+  })
+}
 
 Post.defaultProps = {
-  post: {},
-};
+  post: {}
+}

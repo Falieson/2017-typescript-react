@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import Post from './Post';
+import React from 'react'
+import { Link, Route } from 'react-router-dom'
+import Post from './Post'
 
 const AsyncPostsRoute = () =>
-  (<div>
+  <div>
     <ul>
       <li>
         <Link to="/posts/1">Post 1</Link>
@@ -16,6 +16,6 @@ const AsyncPostsRoute = () =>
     <hr />
 
     <Route path="/posts/:id" component={Post} />
-  </div>);
+  </div>
 
-export default AsyncPostsRoute;
+export default AsyncPostsRoute

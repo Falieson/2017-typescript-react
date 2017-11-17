@@ -19,8 +19,7 @@ exports[`<AboutRoute /> renders 1`] = `
     Produced with ❤️
   </p>
   <p>
-    View our contributors list on our
-     
+    View our contributors list on our 
     <a
       href="https://github.com/ctrlplusb/react-universally"
     >

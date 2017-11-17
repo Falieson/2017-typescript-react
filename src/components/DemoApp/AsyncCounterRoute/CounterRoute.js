@@ -1,15 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class CounterRoute extends Component {
   constructor(props) {
-    super(props);
-    this.incrementCounter = this.incrementCounter.bind(this);
-    this.state = { counter: 0 };
+    super(props)
+    this.incrementCounter = this.incrementCounter.bind(this)
+    this.state = { counter: 0 }
   }
 
   incrementCounter() {
-    this.setState({ counter: this.state.counter + 1 });
+    this.setState({ counter: this.state.counter + 1 })
   }
 
   render() {
@@ -18,8 +18,8 @@ class CounterRoute extends Component {
         <h3>Counter</h3>
         <p>
           <em>
-            This is a small demo component that contains state. It's useful for testing the hot
-            reloading experience of an asyncComponent.
+            This is a small demo component that contains state. It's useful for testing the hot reloading experience of
+            an asyncComponent.
           </em>
         </p>
         <p>
@@ -29,8 +29,8 @@ class CounterRoute extends Component {
           <button onClick={this.incrementCounter}>Increment</button>
         </p>
       </div>
-    );
+    )
   }
 }
 
-export default CounterRoute;
+export default CounterRoute

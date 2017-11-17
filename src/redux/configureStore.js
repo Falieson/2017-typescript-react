@@ -1,7 +1,7 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
-import axios from 'axios';
-import reducer from './reducers';
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import axios from 'axios'
+import reducer from './reducers'
 
 function configureStore(initialState) {
   const enhancers = compose(
@@ -11,7 +11,7 @@ function configureStore(initialState) {
       // arguments to all the redux-thunk actions. Below we are passing a
       // preconfigured axios instance which can be used to fetch data with.
       // @see https://github.com/gaearon/redux-thunk
-      thunk.withExtraArgument({ axios }),
+      thunk.withExtraArgument({ axios })
     ),
     // Redux Dev Tools store enhancer.
     // @see https://github.com/zalmoxisus/redux-devtools-extension
@@ -23,24 +23,22 @@ function configureStore(initialState) {
       ? // Call the brower extension function to create the enhancer.
         window.devToolsExtension()
       : // Else we return a no-op function.
-        f => f,
-  );
+        f => f
+  )
 
-  const store = initialState
-    ? createStore(reducer, initialState, enhancers)
-    : createStore(reducer, enhancers);
+  const store = initialState ? createStore(reducer, initialState, enhancers) : createStore(reducer, enhancers)
 
   if (process.env.NODE_ENV === 'development' && module.hot) {
     // Enable Webpack hot module replacement for reducers. This is so that we
     // don't lose all of our current application state during hot reloading.
     module.hot.accept('./reducers', () => {
-      const nextRootReducer = require('./reducers').default; // eslint-disable-line global-require
+      const nextRootReducer = require('./reducers').default // eslint-disable-line global-require
 
-      store.replaceReducer(nextRootReducer);
-    });
+      store.replaceReducer(nextRootReducer)
+    })
   }
 
-  return store;
+  return store
 }
 
 // NOTE: If we create an '/api' endpoint in our application then we will neeed to
@@ -63,4 +61,4 @@ function configureStore(initialState) {
 //   axios: axios.create(axiosConfig),
 // })
 
-export default configureStore;
+export default configureStore

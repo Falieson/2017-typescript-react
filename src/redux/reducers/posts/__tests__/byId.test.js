@@ -1,7 +1,7 @@
-import byId from '../byId';
+import byId from '../byId'
 
 describe('Posts - byId reducer', () => {
   it('Should return the initial state', () => {
-    expect(byId(undefined, {})).toEqual({});
-  });
-});
+    expect(byId(undefined, {})).toEqual({})
+  })
+})
