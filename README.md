@@ -36,12 +36,13 @@ Then, I went ahead added my architecture decisions and preferences. I'm trying t
 
 ### falieson/2017-typescript-react (this one)
 
-- [x] 🔨  refactor 'shared'=>'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
-- [x] 🔨  refactor 'shared/actions' & 'shared/reducers' =>'shared/redux/...' .
 - [x] 🎮  `nps` node-package-scripts removes the limitation of package.json enabling JS & //comments .  Modify `/package-scripts.js` and use `nps <command>` instead of `npm run <command>`.
 - [x] 🙌  `commitizen` to help us generate beautifully formatted and consistent commit messages.
 - [x] 😹  `cz-emoji` is a plugin for commitizen that adds emoji to the commit template.
 - [x] 🎶  `eslint` preferences, @falieson 's preferences based on @kentcdodds .
+- [x] 🔨  refactor 'shared' => 'src' (per [ctrlplusb/react-universally#521](https://github.com/ctrlplusb/react-universally/issues/521))
+- [x] 🔨  refactor 'shared/actions' & 'shared/reducers' => 'shared/redux/...' .
+- [x] 🔨  refactor 'src/components/demoApp/' => 'src/app' & 'src/components/HTML/index' => 'src/utils/renderHtml'
 
 ### from falieson/react-universally--typescript/features/redux-opinionated
 

@@ -9,8 +9,8 @@ function fetched(post) {
 }
 
 export function fetch(id) {
+  // eslint-disable-next-line no-unused-vars
   return (dispatch, getState, { axios }) => {
-    // eslint-disable-line no-unused-vars
     dispatch(fetching(id))
 
     return (
